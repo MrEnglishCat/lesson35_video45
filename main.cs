@@ -26,19 +26,24 @@ public class Program
        //int [] arrayOut = new int[];   
        for (int i = 0; i < arrayOut.Length; i++)
         {
-            Console.Write ($"\t{arrayOut}");
+            Console.Write ($"\t{arrayOut[i]}");
         }
+        Console.WriteLine();
      return arrayOut;
     }
     
-    /*static int IndexOf (int[] arrayForSearch, int search)
+    static int IndexOf (int[] arrayForSearch, int search)
     {
-       /* for (int i = 0; i < arrayForSearch.Length; i++)
-        {
-            
-        }
-        return -1;
-    }*/
+       for (int i = 0; i < arrayForSearch.Length; i++)
+       {
+            if (search == arrayForSearch[i])
+            {
+                return 1;
+            }
+
+       }
+       return -1;
+    }
 
     
     public static void Main()
@@ -60,9 +65,9 @@ public class Program
         int search = 0;
         bool check = false;
         int[] myArray =  GetArray(-10, 10, 5);     
-
+        OutArray(myArray);
         Console.Write("Введите элемент для поиска: ");
         search = int.Parse(Console.ReadLine());
-        OutArray(myArray);
+        Console.WriteLine($"{IndexOf(myArray, search)}");
     }
 }
