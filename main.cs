@@ -38,7 +38,7 @@ public class Program
        {
             if (search == arrayForSearch[i])
             {
-                return 1;
+                return i;
             }
 
        }
