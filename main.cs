@@ -1,10 +1,15 @@
+// +1) Метод, который выводит на экран строку. Символы, из которых состоит строка, и их количество вводятся пользователем. 
+// 2) Написать программу для поиска индекса элемента массива (тип элементов в массиве -int; ). Поиск должен вернуть индекс первого найденного элемента. 
+
+  //////////////////////////////////////
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 public class Program
 {
     
-    static int[] GetArray (int length, int minValue, int maxValue)
+    static int[] GetArray (int minValue, int maxValue, int length)
     {
      Random random = new Random();
      int[] array_1 = new int[length];      
@@ -16,23 +21,29 @@ public class Program
      return array_1;
     }
 
-    static int[] OutArray (int[] array_1)
-    {
-     
-       for (int i = 0; i < array_1.Length; i++)
+    static int[] OutArray (int [] arrayOut)
+    {   
+       //int [] arrayOut = new int[];   
+       for (int i = 0; i < arrayOut.Length; i++)
         {
-            Console.Write ($"\t{array_1}");
+            Console.Write ($"\t{arrayOut}");
         }
-     return array_1;
+     return arrayOut;
     }
     
+    /*static int IndexOf (int[] arrayForSearch, int search)
+    {
+       /* for (int i = 0; i < arrayForSearch.Length; i++)
+        {
+            
+        }
+        return -1;
+    }*/
+
     
     public static void Main()
     {
-// +1) Метод, который выводит на экран строку. Символы, из которых состоит строка, и их количество вводятся пользователем. 
-// 2) Написать программу для поиска индекса элемента массива (тип элементов в массиве -int; ). Поиск должен вернуть индекс первого найденного элемента. 
 
-  //////////////////////////////////////
        /* int countOfUserSymbol = 0;
         string symbolOfUser = "";
         Console.Write("Введите количество символов в строке: ");
@@ -48,26 +59,10 @@ public class Program
         /////////////////////////////////////
         int search = 0;
         bool check = false;
-        int[] myArray =  GetArray(-10, 10, 10);
-        OutArray (myArray);
+        int[] myArray =  GetArray(-10, 10, 5);     
 
-     
-     Console.Write("Введите элемент для поиска: ");
-     search = int.Parse(Console.ReadLine());
-
-     for (int i = 0; i < myArray.Length; i++)
-     {
-        if (search == myArray[i])
-        {
-          Console.WriteLine($"Элемент найден. Индекс элемента {search} - {i}");         
-          check = true;
-           break;
-        }
-           
-     }  
-     if (check == false)
-     {
-         Console.WriteLine($"Элемент не найден.");
-     }
+        Console.Write("Введите элемент для поиска: ");
+        search = int.Parse(Console.ReadLine());
+        OutArray(myArray);
     }
 }
