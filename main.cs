@@ -53,7 +53,7 @@ public class Program
         string symbolOfUser = "";
         Console.Write("Введите количество символов в строке: ");
         countOfUserSymbol = int.Parse(Console.ReadLine());
-        Console.Write("Ввкдите символ из которого будет состоять строка: ");
+        Console.Write("Введите символ из которого будет состоять строка: ");
         symbolOfUser = Console.ReadLine();
         for (int i = 1; i <= countOfUserSymbol; i++)
         {
